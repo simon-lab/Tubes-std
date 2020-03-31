@@ -53,8 +53,7 @@ void insertfirst3(list &L, address p){
 };
 
 void deleteafter1(list &L, address p, address &prec){
-        address p
-        address q
+        address q;
 
         if (isEmpty(L)){
             cout << "data kosong" << endl;
@@ -73,7 +72,7 @@ void deleteafter1(list &L, address p, address &prec){
             next(p) = NULL;
             last(L) = q;
         }else if(first(L) == prec){
-            first(L) = next(prec)
+            first(L) = next(prec);
             p = prec;
             next(p) = NULL;
         }else{
@@ -88,11 +87,11 @@ void deleteafter1(list &L, address p, address &prec){
 }
 
 void deleteafter3(list &L, address &prec){
-        address p
-        address q
+        address p;
+        address q;
 
         if (isEmpty(L)){
-            cout << "data kosong" << endl
+            cout << "data kosong" << endl;
         }else if(first(L) == prec && next(prec) == first(L)){
             first(L) = NULL;
             last(L) = NULL;
@@ -103,7 +102,7 @@ void deleteafter3(list &L, address &prec){
             while(next(q) != prec){
                 q = next(q);
             }
-            p = prec
+            p = prec;
             next(q) = first(L);
             next(p) = NULL;
             last(L) = q;
@@ -111,7 +110,7 @@ void deleteafter3(list &L, address &prec){
             first(L) = next(prec);
             next(last(L)) = next(prec);
             p = prec;
-            next(p) = NULL
+            next(p) = NULL;
         }else{
             q = first(L);
             while(next(q) != prec){
@@ -124,9 +123,51 @@ void deleteafter3(list &L, address &prec){
 }
 
 void caridata1(list &L, infotype &x, address prec){
+    address p;
+
     if(isEmpty(L)){
         cout << "datakosong" << endl;
-    }else(info(first(L)))
+    }else if(next(first(L)) == NULL){
+        if(info(first(L)) == info(x)){
+            prec = first(L);
+        }else{
+            prec = NULL;
+        };
+    }else{
+        p = first(L);
+        while(info(p) != info(x) || next(p) != NULL){
+            p = next(p);
+        }
+        if(info(next(p)) == info(x)){
+            prec = p;
+        }else{
+            prec = NULL;
+        }
+    }
+}
+
+void caridata3(list &L, infotype &x, address prec){
+    address p;
+
+    if(isEmpty(L)){
+        cout << "datakosong" << endl;
+    }else if(next(first(L)) == first(L)){
+        if(info(first(L)) == info(x)){
+            prec = first(L);
+        }else{
+            prec = NULL;
+        };
+    }else{
+        p = first(L);
+        while(info(p) != info(x) || next(p) != first(L)){
+            p = next(p);
+        }
+        if(info(next(p)) == info(x)){
+            prec = p;
+        }else{
+            prec = NULL;
+        }
+    }
 }
 
 void printdata1(list L){
