@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1585588690 source:c:\users\hp 15\documents\kodingan\tubes\main.cpp
+	<iostream>
+	"DataBerobat2.cpp"
+
+1585587945 c:\users\hp 15\documents\kodingan\tubes\databerobat2.h
+	<iostream>
+
+1585588843 c:\users\hp 15\documents\kodingan\tubes\databerobat2.cpp
+	<iostream>
+	"DataBerobat2.h"
+
